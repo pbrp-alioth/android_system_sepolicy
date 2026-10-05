@@ -806,6 +806,10 @@ se_policy_cil {
 
 se_policy_binary {
     name: "sepolicy.recovery",
+    // Upstream PBRP recovery services; does not change Android policy checks.
+    permissive_domains_on_user_builds: [
+        "recovery",
+    ],
     srcs: [":recovery_sepolicy.cil"],
     stem: "sepolicy",
     recovery: true,
